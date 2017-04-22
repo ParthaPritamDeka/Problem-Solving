@@ -1,0 +1,19 @@
+def func(X):
+    
+    list = []
+    dict = {}
+    
+    for i in range(len(X)):
+        if X[i] not in dict:
+            dict[X[i]] = str(X.count(X[i]))
+            kv = str(X[i]) + str(dict[X[i]])
+            list.append(kv)
+    print dict
+    print list
+                                              
+     
+    return ''.join(list)
+            
+            
+#print func('aaaabbbccdkljweeeeeeeeeeeeeeeee,mznxjknxznjzdjdlklkjdflncnkjdidjdiojjjjjjjjjjjjjjjjjjjjjjncncmbdjshijldbccn.n.n.jnccnvv,mcn,n,n,n.,nn.c.a')        
+print func('aaaabbbbbnnnnn')    
