@@ -29,7 +29,7 @@ for i in data_list:
     #break
     new_list.append(dum_list)
 
-df = pd.DataFrame(new_list, columns=['country', 'city', 'product_line', 'elevator_id', 'record_date', 'record_hour', 'trip_counter'])
+df = pd.DataFrame(new_list, columns=['country', 'city', .....'])
 
 print df.head()
 
