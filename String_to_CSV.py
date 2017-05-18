@@ -11,7 +11,7 @@ import urllib2
 import csv
 import pandas as pd
 
-response = urllib2.urlopen('https://schindler-postgresextract.run.aws-usw02-pr.ice.predix.io/getPostgresqry1')
+response = urllib2.urlopen('########')
 
 data = response.read()
 
