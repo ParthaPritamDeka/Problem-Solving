@@ -40,4 +40,25 @@ def top_5(query):
         return top5 
     
 print top_5({'cat' : 4, 'hello': 8, 'weather' : 10, 'partha': 6, 'deka': 7, 'yahoo' : 9, 'indigo': 4})
+
+
+
+# Class implementation
+
+import operator
+class Top5:
+    def __init__(self, query):
+        self.query = query
+        
+    def topFive(self):
+        i = 0
+        dict1 = {}
+        
+        sorted_list = sorted(self.query.items(), key=operator.itemgetter(1), reverse = True)
+        
+        return sorted_list[:5]
+        
+myobjectx = Top5({'cat' : 4, 'hello': 8, 'weather' : 10, 'partha': 6, 'deka': 7, 'yahoo' : 9, 'indigo': 4})
+
+print myobjectx.topFive()
     
