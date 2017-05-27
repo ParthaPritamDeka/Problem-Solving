@@ -1,0 +1,12 @@
+def kth_smallest(matrix, k):
+    min = 99999999
+    rows, cols = len(matrix), len(matrix[0])
+    return sorted([matrix[row][col] for row in range(rows) for col in range(cols)])[k-1]
+
+matrix = [
+   [ 78,  43,  96],
+   [101, 2, 7],
+   [789, 23, 56]
+]
+
+print kth_smallest(matrix, 8)
