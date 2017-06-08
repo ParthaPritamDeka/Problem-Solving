@@ -1,2 +1,3 @@
 1. Time series Data preprocessing , data points from three different sensors every 1 meter depth from diffferent drilling wells?
 2. Bp, Sugar and other metric from different patients at say 2 min, 2 min or even days interval.....how do fine the similarity metric etc?
+3. Any Anomaly detection work?
