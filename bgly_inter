@@ -1,0 +1,36 @@
+Question 1: Find the median for a stream of integers
+
+Answer:
+
+def find_median(list):
+
+    lst = sorted(list)
+    
+    n = len(lst)
+    
+    if n == 0:
+       return
+       
+    if n % 2 == 1:
+       return lst[n//2]
+       
+    else:
+       return sum(lst[n//2 -1: n//2+1])/2.0
+     
+Question 2: Write a function to print all permutations of a word
+Input : abc
+Output: abc, acb, bac, bca, cab, cba
+
+def func(str):
+    if len(str) == 2:
+        out = [str, (str[1] + str[0])]
+        return out
+    else:
+        lista = []
+        for i in range(0, len(str)):
+            out1 = func(str[0:i] + str[i+1: len(str)])
+            for j in out1:
+                lista.append(str[i] + j)
+        return lista
+out = func('abc')
+print out
