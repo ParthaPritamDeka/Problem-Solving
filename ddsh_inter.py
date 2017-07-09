@@ -13,12 +13,15 @@ def get_random_item(choices):
         if wt > 0:
             space[current] = choice
             current  += wt
-    rand = random.uniform(0, current)
     
+    #print space
+    rand = random.uniform(0, current)
+    #print rand
+    #print space.keys(), current
     for key in sorted(space.keys() + [current]):
         if rand < key:
             return choice
-        
+        choice = space[key]
  #get_random_item({ 0:0.1, 1:0.1, 2:0.8})       
     
       #return int
