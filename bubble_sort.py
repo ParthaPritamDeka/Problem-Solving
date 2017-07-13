@@ -1,4 +1,4 @@
-#Time Complexity O(n)
+#Time Complexity O(n2)
 #Space Complexity O(1)
 def bubble_sort(list):
     for i in range(len(list)-1 , 0, -1):
