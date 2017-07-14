@@ -1,0 +1,54 @@
+def sorti(list):
+    if len(list)> 1:
+        mid = len(list)//2
+        left = list[:mid]
+        right = list[mid:]
+        sorti(left)
+        sorti(right)
+        
+        i = 0
+        j = 0
+        k = 0
+        
+        while i < len(left) and j < len(right):
+            if left[i] < right[j]:
+                list[k] = left[i]
+                i = i + 1
+            else:
+                list[k] = right[j]
+                j = j + 1
+            k = k + 1
+            
+        while i < len(left):
+            list[k] = left[i]
+            i = i + 1
+            k = k + 1
+            
+        while j < len(right): 
+            list[k] = right[j]
+            j = j + 1
+            k = k + 1
+    return list
+        
+
+def median_two_sorted(list1, list2):
+    
+    list_two = list1 + list2
+    
+    list_two = sorti(list_two)
+    
+    print list_two
+    
+    n = len(list_two)
+    
+    while n % 2 == 1:
+        return list_two[n//2]
+    else:
+        print list_two[n//2 -1]
+        print list_two[n//2]
+        return float(float(list_two[n//2 -1]) + float(list_two[n//2]))//2
+    
+
+    
+median_two_sorted([1,2, 5, 6], [3,4, 7,8])        
+        
