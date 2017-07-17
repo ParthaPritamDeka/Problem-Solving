@@ -178,3 +178,14 @@ inner join (select c.*, row_number() over(order by played) rn from stg.v_temp_pl
 inner join (select c.*, row_number() over(order by played) rn from stg.v_temp_playday c) d on b.winner = d.winner and b.rn = d.rn+1
 inner join (select c.*, row_number() over(order by played) rn from stg.v_temp_playday c) e on d.winner = e.winner and d.rn = e.rn+1
 where a.winner = 'USA' ;
+
+
+/********************** PSOTGRESQL -Consecutive Ones Query ***********************/
+
+select b.Num
+from (select a.Num, a.grp, count(*) as cnt 
+      from (select Num, Id, (Id - row_number() over (partition by Num order by Id)) grp
+            from one_cons
+            order by Num, Id) a
+      group by Num, grp) b
+where cnt >=3
