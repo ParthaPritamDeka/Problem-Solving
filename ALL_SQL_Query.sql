@@ -189,3 +189,17 @@ from (select a.Num, a.grp, count(*) as cnt
             order by Num, Id) a
       group by Num, grp) b
 where cnt >=3
+
+
+
+/********************** MSQL - Consecutive Ones Query *****************/
+
+select 
+a.Num
+from one_cons a,
+     one_cons b,
+     one_cons c
+where   a.Id = b.Id - 1
+    and b.Id = c.Id - 1
+    and a.Num = b.Num
+    and b.Num = c.Num
