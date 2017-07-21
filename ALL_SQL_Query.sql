@@ -55,11 +55,12 @@ where winner = 'USA' and no_of_consecutive_wins = 3;
   
 #### Delete duplicates from Oracle ####
 
-delete from table A
-where A.row_id >
-               Any(select b.row_id
-			   from table B
-			   where A.row_id = B.row_id)
+
+delete from table a
+where table.row_id > Any(select row_id
+                         from table b
+                         where a.col1 = b.col1
+                         and   a.col2 = b.col2)
 			   
 #### Corelated Subquery display all customer who have no orders ####
 
