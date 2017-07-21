@@ -181,6 +181,14 @@ inner join (select c.*, row_number() over(order by played) rn from stg.v_temp_pl
 where a.winner = 'USA' ;
 
 
+/************ Select max value without max function **************/
+
+select ID from
+pr where ID not in (select a.ID
+from pr a, pr b
+where b.ID > a.ID) 
+
+
 /********************** PSOTGRESQL -Consecutive Ones Query ***********************/
 
 select b.Num
