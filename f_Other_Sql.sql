@@ -52,5 +52,48 @@ select day,
                 else 0 end)) as apple_orange_diff
 from table
 group by day
-            
+
+
+### NEW SQL Queries
                       
+'''
+1. Get the states with more the than 100000 population
+2. Count the number of products which sold more than 10 units
+3. Get youngest customer who bought atleast 1 product
+4. Get the areas from which we have the products sold
+1. Second highest salary
+2. Top earning person in each department
+'''
+#1 
+select states, population
+from tbl
+where population > 100000
+
+#2
+Select c.customer_id , count(distinct o.product_id) as no_products
+from customers c inner join orders o
+on customers.customer_id = orders.order_id
+group by c.customer_id
+having count(distinct o.product_id) > 10
+
+#3
+select c.customer_id
+from (Select c.customer_id , dense_rank() over(order by 
+                                          EXTRACT(epoch from dob)::int /86400)
+             as rank
+            ,count(distinct o.product_id) as no_products
+from customers c inner join orders o
+on customers.customer_id = orders.order_id
+group by c.customer_id, dense_rank() over(order by 
+                                          EXTRACT(epoch from dob)::int /86400)
+having count(distinct o.product_id) > 1)c 
+where c.rank = 1
+
+#2. Top earning person in each department
+
+select employee_id
+from (select employee_id, department_id, sal
+             dense_rank() over(partition by department_id order by salary desc) as rank
+      from   employee
+      order by department_id, sal desc)
+where rank = 1
