@@ -33,6 +33,24 @@ for i in range(len(Monkey_list)):
 #print switch_state
         
 print len([x for x in switch_state[1:n] if x == 1])
+
+
+#### Simple solution:
+
+monkey = 100*[1]
+
+switch_state = 100*[0]
+
+for m in range(0,100,1):
+    for s in range(m,100,2):
+        if switch_state[s] == 0:
+            switch_state[s] = 1
+        else:
+            switch_state[s] = 0
+            
+print len([x for x in switch_state[0:100] if x == 1])
+
+print switch_state
     
 
     
