@@ -61,6 +61,25 @@ where table.row_id > Any(select row_id
                          from table b
                          where a.col1 = b.col1
                          and   a.col2 = b.col2)
+			 
+			 
+#### Select distinct records from a table ########
+
+#1
+
+select a.col
+from (select col, row_number() over (partition by col order by col) as rnk
+from stg1) a
+where a.rnk =1
+
+
+#2
+
+select a.col
+from (select col, count(*)
+from stg1
+group by col)a
+order by a.col
 			   
 #### Corelated Subquery display all customer who have no orders ####
 
