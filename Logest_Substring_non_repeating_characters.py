@@ -38,7 +38,8 @@ def longestUniqueSubsttr(string):
             if cur_len > max_len:
                 max_len = cur_len
  
-            cur_len = i - prev_index
+            #cur_len = i - prev_index
+             cur_len = 1
  
         # update the index of current character
         visited[ord(string[i])] = i
