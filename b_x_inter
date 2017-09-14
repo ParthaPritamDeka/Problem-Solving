@@ -1,0 +1,10 @@
+Multivariate linear regression:
+
+y = m1x1 + m2x2
+
+by one dependant variable linear: y = m1x1 + x1x2
+
+Linear + non -linear, plot y by only one variable
+
+by one dependant variable non-linearv: y = a1x12 + x12x2  (squre the non-lonear variable)
+
