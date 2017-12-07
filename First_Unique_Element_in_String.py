@@ -1,14 +1,11 @@
-def longest(a):
-    
+def first_unique(a):
     n = len(a)
     
     list = []
     
-    last_cnt = 1
+    lst_cnt =1 
     
     visited = [-1]*256
-    
-    #lets keep the first element as visited
     
     visited[ord(a[0])] = 0
     
@@ -17,14 +14,18 @@ def longest(a):
         prev_visit = visited[ord(a[i])]
         
         if prev_visit == -1:
-            if last_cnt == 1:
+
+            if lst_cnt == 1:
                 return a[i-1]
-            last_cnt = 1
             
+            if lst_cnt > 1 and i == n-1:
+                return a[i]
+            
+            lst_cnt = 1
         else:
-            last_cnt +=1
+            lst_cnt += 1
             
-        visited[ord(a[i])] = i
+        visited[ord(a[i])] = 1
         
 
-print longest('aaaaaayyyyykcbbffffxxxxxx')
+print first_unique('aaaaaayyyyykkc')
