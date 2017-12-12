@@ -1,0 +1,12 @@
+Input: a rainy day
+Output: A Rainy Day
+
+def upperstr(str1)
+
+    lst = [str1[0].upper() + str1[1:] for str1 in str1.split()]
+    return " ".join(lst)
+    
+   
+ K images, unknown number of clusters
+ 
+ clustering 
