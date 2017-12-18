@@ -1,0 +1,37 @@
+You will be given 1-2 data processing questions during this portion. This will be a hands-on technical investigation of data problems. We are looking not only for coding skills, but also for the ability to design an operational approach to figure out a concrete answer to a specific question using data.
+
+Sample Questions:
+
+- Given timestamps of logins, figure out how many people on Facebook were active all seven days of a week on a mobile phone.
+- How do you determine what product in Facebook was used most by the non-employee users for the last quarter? [Required parameters will be given]
+
+While the actual data presented in the technical question will vary based on the question being asked, you can expect to see event-level data, dimension-level data, or both. This data set is designed forinterview purposes and is not representative of the large data sets we work with at FB.
+
+Mock Data and Questions:
+
+Here's a couple of examples that don't pertain specifically to Facebook but are representative of the kind of data and format with which you'll be presented:
+
+Event-level data: an attendance log for every student in a school district
+
+date | student_id | attendance
+
+Dimension-level data: a summary table with demographics for each student in the district
+
+student_id | school_id | grade_level | date_of_birth | hometown
+
+Using this data, you could answer questions like the following:
+
+- What was the overall attendance rate for the school district yesterday?
+- Which grade level currently has the most students in this school district?
+- Which school had the highest attendance rate? The lowest?
+
+You will be expected to write code that would answer the data processing questions given based on a schema or set of schemas that will be provided to you. Whether you choose SQL, Python, or R, please follow standard coding style and best practices for easy readability.
+
+If using SQL, you can expect to be assessed on some subset of the following:
+
+- Write a query or set of queries to derive insights based on the given log(s) or schema(s)
+- Work with aggregate functions
+- Utilize different types of Joins (IE: Left, Inner, Outer, etc.)
+- Utilize Union and Union All.
+- Work with concepts including Distinct, Random Sampling, De-Duplication, Optimization.
+- Apply the results of your analysis to make product decisions or suggestions.
