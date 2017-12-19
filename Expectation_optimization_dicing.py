@@ -4,7 +4,7 @@ import random
 
 def max_expectations(n):
 
-    #expected = 100
+    lst_state = 0
     
 
     for i in range(n):
@@ -12,13 +12,17 @@ def max_expectations(n):
         output = random.randint(1,6)
         
         if output == 6:
+            print ("I am within the main output loop")
             print ("I have reached my expected number:",  output)
-            return  
+            return 
+        
+        if output < 6 and lst_state < 6:
+            print ("I am within the lst_state loop")
+            lst_state = lst_state + output
+            if lst_state == 6:
+                print ("I have reached my expected number:",  lst_state)
+                return 
        
     print ("I have failed to optimize or mazimize:") 
     return
              
-      
-            
-    #if start == expected:
-        #print ("I have reached my expected number:",  start)     
