@@ -23,6 +23,6 @@ def max_expectations(n):
                 print ("I have reached my expected number:",  lst_state)
                 return 
        
-    print ("I have failed to optimize or mazimize:") 
+    print ("optimization or mazimization failed:") 
     return
              
