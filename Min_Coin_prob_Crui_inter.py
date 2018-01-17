@@ -30,5 +30,3 @@ m = len(coins)
 V = 11
 print("Minimum coins required is",minCoins(coins, m, V))
  
-# This code is contributed by
-# Smitha Dinesh Semwal
