@@ -3,6 +3,40 @@ You will be given 1-2 data processing questions during this portion. This will b
 Sample Questions:
 
 - Given timestamps of logins, figure out how many people on Facebook were active all seven days of a week on a mobile phone.
+SOLUTION POSTGRESQL:
+select id, count(distinct login_date)
+from (select id, login_time::date as login_date
+FROM (select 1 as id, '2010-01-01 12:00:00'::timestamp as login_time
+      union all
+      select 2 as id, '2010-01-02 12:00:00'::timestamp as login_time
+      union all
+      select 3 as id, '2010-01-03 12:00:00'::timestamp as login_time
+      union all
+      select 4 as id, '2010-01-04 12:00:00'::timestamp as login_time
+      union all
+      select 5 as id, '2010-01-05 12:00:00'::timestamp as login_time
+      union all
+      select 6 as id, '2010-01-06 12:00:00'::timestamp as login_time
+      union all
+      select 7 as id, '2010-01-07 12:00:00'::timestamp as login_time
+      union all
+      select 1 as id, '2010-01-01 12:00:00'::timestamp as login_time
+      union all
+      select 1 as id, '2010-01-02 12:00:00'::timestamp as login_time
+      union all
+      select 1 as id, '2010-01-03 12:00:00'::timestamp as login_time
+      union all
+      select 1 as id, '2010-01-04 12:00:00'::timestamp as login_time
+      union all
+      select 1 as id, '2010-01-05 12:00:00'::timestamp as login_time
+      union all
+      select 1 as id, '2010-01-06 12:00:00'::timestamp as login_time
+      union all
+      select 1 as id, '2010-01-07 12:00:00'::timestamp as login_time)tbl
+order by id, login_time)tbl2
+group by id
+having count(distinct login_date) = 7;
+
 - How do you determine what product in Facebook was used most by the non-employee users for the last quarter? [Required parameters will be given]
 
 While the actual data presented in the technical question will vary based on the question being asked, you can expect to see event-level data, dimension-level data, or both. This data set is designed forinterview purposes and is not representative of the large data sets we work with at FB.
