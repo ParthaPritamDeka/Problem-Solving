@@ -303,3 +303,30 @@ and x.cnt >=3
 order by people_grp.id, people_grp.date
 
 /************** Human Traffic of Stadium***************/
+
+
+/**********  FB Data Science  - Jan 25th 2017***********/
+
+message_sends
+date (STRING)
+u1 (INT)
+u2 (INT)
+n_messages (INT)
+
+date = '2017-11-01'
+
+with user_tbl as
+select u, cnt_msg from (select U1 as u, sum(n_messages) as cnt_msg
+from message_sends
+where date = '2017-11-01'
+union
+select U2 as u, sum(n_messages) as cnt_msg
+from message_send
+where date = '2017-11-01')a
+
+
+select cnt_msg , count(u) as no_of_users
+from user_tbl
+group by cnt_msg
+
+/**************/
