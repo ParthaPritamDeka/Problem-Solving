@@ -316,16 +316,19 @@ n_messages (INT)
 date = '2017-11-01'
 
 with user_tbl as
-select u, cnt_msg from (select U1 as u, sum(n_messages) as cnt_msg
-from message_sends
-where date = '2017-11-01'
-group by U1
-union
-select U2 as u, sum(n_messages) as cnt_msg
-from message_send
-where date = '2017-11-01'
-group by U2)a
-
+(select usr as u, sum(msg) cnt_msg
+from
+(
+select user_one as usr, sum(msg_cnt) as msg
+from message
+where date = '2018-01-02'
+group by user_one
+union all
+select user_two, sum(msg_cnt)
+from message
+where date = '2018-01-02'
+group by user_two)x
+group by usr)
 
 select cnt_msg , count(u) as no_of_users
 from user_tbl
