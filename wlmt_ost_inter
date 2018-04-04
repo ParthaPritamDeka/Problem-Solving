@@ -1,0 +1,10 @@
+1. Probability Expectation maximization question:
+- There are N persons in an elevator at the ground, there are M floors above ground, each person has an equal chance to exit on each floor, 
+  what's the expected number of stops?
+Solution:
+
+The probability that one person is not getting off on floor number p is (1−1n) All k people not getting off on the pth floor has probability (1−1n)k
+
+E[Xp]=1−P( no one stops on the pth floor)=1−(1−1n)k
+Which is independent of p so the expected number of stops is given by
+E[∑p=2n+1Xp]=n(1−(1−1n)k)
