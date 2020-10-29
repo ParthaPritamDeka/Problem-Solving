@@ -2,6 +2,11 @@ You will be given 1-2 data processing questions during this portion. This will b
 
 Sample Questions:
 
+(4) Given timestamps of logins, figure out how many people on Facebook were active allseven days of a week on a mobile phone.
+Select user_id from (Select distinct user_id, date from tableWhere dayofweek(date) >0 and dayofweek(date) <= 7)
+Gourp by user_id
+Having count(*) = 7
+
 - Given timestamps of logins, figure out how many people on Facebook were active all seven days of a week on a mobile phone.
 SOLUTION POSTGRESQL:
 select id, count(distinct login_date)
