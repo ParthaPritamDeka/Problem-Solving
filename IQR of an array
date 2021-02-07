@@ -1,0 +1,32 @@
+import numpy as np
+
+#define array of data
+data = np.array([14, 19, 20, 22, 24, 26, 27, 30, 30, 31, 36, 38, 44, 47])
+
+#calculate interquartile range 
+q3, q1 = np.percentile(data, [75 ,25])
+iqr = q3 - q1
+
+#display interquartile range 
+iqr
+
+12.25
+
+
+import numpy as np
+import pandas as pd
+
+#create data frame
+df = pd.DataFrame({'rating': [90, 85, 82, 88, 94, 90, 76, 75, 87, 86],
+                   'points': [25, 20, 14, 16, 27, 20, 12, 15, 14, 19],
+                   'assists': [5, 7, 7, 8, 5, 7, 6, 9, 9, 5],
+                   'rebounds': [11, 8, 10, 6, 6, 9, 6, 10, 10, 7]})
+
+#calculate interquartile range of values in the 'points' column
+q75, q25 = np.percentile(df['points'], [75 ,25])
+iqr = q75 - q25
+
+#display interquartile range 
+iqr
+
+5.75
