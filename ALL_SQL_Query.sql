@@ -21,7 +21,7 @@ group by Day
 order by Day;
 
 
-select date, max(case when fruit = 'Apple' then sold Else Null end) - max(case when fruit = 'Orange' then sold Else Null end)
+select date, abs(max(case when fruit = 'Apple' then sold Else Null end) - max(case when fruit = 'Orange' then sold Else Null end))
 from stg.temp_x
 group by date
 oder by date;
