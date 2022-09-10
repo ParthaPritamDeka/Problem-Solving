@@ -1,12 +1,16 @@
-def twoSum(nums, target):
-    if len(nums) <= 1:
+def target_two(num_list, target):
+    
+    if len(num_list)<= 1:
         return False
+    
     buff_dict = {}
-    for i in range(len(nums)):
-        if nums[i] in buff_dict:
-            return [buff_dict[nums[i]], nums[i]]
+    return_list = []
+    
+    for i in range(len(num_list)):
+        if num_list[i] in buff_dict:
+            return_list.append((buff_dict[num_list[i]], num_list[i]))
         else:
-            buff_dict[target - nums[i]] = nums[i]
-            
-print twoSum([9,8,2,3], 5)
+            buff_dict[target-num_list[i]] = num_list[i]
+                               
+    return return_list
 buff_dict = {-4 : 0, -3 : 1, 3 : 2}
