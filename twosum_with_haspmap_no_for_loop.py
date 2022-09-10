@@ -6,7 +6,7 @@ def twoSum(nums, target):
         if nums[i] in buff_dict:
             return [buff_dict[nums[i]], nums[i]]
         else:
-            buff_dict[target - nums[i]] = i
+            buff_dict[target - nums[i]] = nums[i]
             
 print twoSum([9,8,2,3], 5)
 buff_dict = {-4 : 0, -3 : 1, 3 : 2}
